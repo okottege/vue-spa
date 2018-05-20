@@ -16,6 +16,7 @@ const config = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {},
       },
       {
         test: /\.scss$/,
