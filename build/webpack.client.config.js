@@ -1,4 +1,3 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const base = require('./webpack.base.config');
 
 const config = Object.assign({}, base, {
@@ -6,10 +5,8 @@ const config = Object.assign({}, base, {
 });
 
 /* eslint-disable no-param-reassign  */
-config.module.rules
-  .filter(r => r.loader === 'vue-loader')
-  .forEach((r) => { r.options.extractCSS = true; });
-
-config.plugins.push(new ExtractTextPlugin('assets/styles.css'));
+// config.module.rules
+//   .filter(r => r.loader === 'vue-loader')
+//   .forEach((r) => { r.options.extractCSS = true; });
 
 module.exports = config;

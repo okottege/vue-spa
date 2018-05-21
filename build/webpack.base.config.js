@@ -16,10 +16,12 @@ const config = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {},
+        options: {
+          extractCSS: true,
+        },
       },
       {
-        test: /\.scss$/,
+        test: /(\.scss$)|(\.css$)/,
         use: [
           'vue-style-loader',
           'css-loader',
