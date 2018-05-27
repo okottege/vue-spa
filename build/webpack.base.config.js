@@ -2,6 +2,7 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 
 const config = {
+  mode: 'development',
   entry: {
     app: path.resolve(__dirname, '../src/client-entry.js'),
   },
