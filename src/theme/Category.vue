@@ -9,33 +9,27 @@
 </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import Post from './Post.vue';
-import AppService from '../app.service';
 
 export default {
   components: {
     'app-post': Post,
   },
-  data() {
-    return {
-      id: this.$route.params.id,
-      posts: [],
-    };
+  computed: {
+    ...mapGetters('postsModule', ['posts']),
   },
   methods: {
     loadPosts() {
       let categoryId = 2;
-      if (this.id === 'mobile') {
+      if (this.$route.params.id === 'mobile') {
         categoryId = 11;
       }
-
-      AppService.getPosts(categoryId)
-        .then((data) => { this.posts = data; });
+      this.$store.dispatch('postsModule/updateCategory', categoryId);
     },
   },
   watch: {
-    $route(to) {
-      this.id = to.params.id;
+    $route() {
       this.loadPosts();
     },
   },
