@@ -5,6 +5,7 @@ const config = {
   mode: 'development',
   entry: {
     app: path.resolve(__dirname, '../src/client-entry.js'),
+    vendor: ['vue', 'vue-router', 'vuex', 'axios'],
   },
   module: {
     rules: [

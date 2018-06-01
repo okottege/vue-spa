@@ -9,4 +9,12 @@ const config = Object.assign({}, base, {
 //   .filter(r => r.loader === 'vue-loader')
 //   .forEach((r) => { r.options.extractCSS = true; });
 
+// if (process.env.NODE_ENV === 'production') {
+//   config.plugins.push(new webpack.optimize.m({
+//     compress: {
+//       warnings: false,
+//     },
+//   }));
+// }
+
 module.exports = config;
